@@ -9,7 +9,7 @@ This repository contains an illustration of the numerical experiments performed 
 
 The Python code can be downloaded at
 
-[Github repository lar_testing ZIP](https://github.com/ydecastro/lar_testing)
+[Github repository lar_testing](https://github.com/ydecastro/lar_testing)
 
 The file **multiple_spacing_tests.py** contains all the auxiliary functions, that is the *MAIN FILE*. The file **FDR_control.py** is specific to the FDR control and it is illustrated in the notebook 'multiple_spacing_tests.ipynb'. The others .txt files are datasets on HIV drug resistance.
 
