@@ -22,7 +22,7 @@ It requires at most: python>=3.6.4, numpy>=1.14.0, scipy>=1.0.0
 
 Python notebook on a new testing procedure on the LAR path and a new FDR control using LAR.
 
-Please [Have a look at the Jupiter notebook on blob for the JOINT LAW](https://github.com/ydecastro/lar_testing/blob/master/law_LAR.ipynb)
+Please [Have a look at the Jupiter notebook on blob for the JOINT LAW](https://github.com/ydecastro/lar_testing/blob/master/Law_LAR.ipynb)
 
 Please [Have a look at the Jupiter notebook on blob for FDR](https://github.com/ydecastro/lar_testing/blob/master/multiple_spacing_tests.ipynb)
 
