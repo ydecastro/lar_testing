@@ -3,18 +3,12 @@
 This repository contains an illustration of the numerical experiments performed in the paper entitled
 > *Multiple Testing and Variable Selection along Least Angle Regression's path*, [arXiv:1906.12072v3](https://arxiv.org/abs/1906.12072v3).
 
-by Jean-Marc Azaïs and [Yohann De Castro](https:ydecastro.github.io).
-
-
-## Python source code
-
-The Python code can be downloaded at
+by Jean-Marc Azaïs and [Yohann De Castro](https:ydecastro.github.io). The Python code can be downloaded at
 
 [Github repository lar_testing](https://github.com/ydecastro/lar_testing)
 
-## Notebooks presentation
+## Comparison with Knockoff, FCD and SLOPE on HIV dataset
 
-### comparison with Knockoff, FCD and SLOPE on HIV dataset
 The [**first notebook** called *Multiple Spacing Tests*](https://github.com/ydecastro/lar_testing/blob/master/multiple_spacing_tests.ipynb) presents the numerical experiments of the paper entitled
 
 > *Multiple Testing and Variable Selection along Least Angle Regression's path*, [arXiv:1906.12072v3](https://arxiv.org/abs/1906.12072v3).
@@ -36,7 +30,7 @@ The methods considered are:
 > *Multiple Testing and Variable Selection along Least Angle Regression's path*, [arXiv:1906.12072v3](https://arxiv.org/abs/1906.12072v3).
 
 
-### Numerical joint law
+## Numerical joint law
 The [**second notebook**](https://github.com/ydecastro/lar_testing/blob/master/Law_LAR.ipynb) gives an empirical evidence of the joint law shown in the paper
 > *Multiple Testing and Variable Selection along Least Angle Regression's path*, [arXiv:1906.12072v3](https://arxiv.org/abs/1906.12072v3).
 
