@@ -15,7 +15,7 @@ The Python code can be downloaded at
 ## Notebooks presentation
 
 ### comparison with Knockoff, FCD and SLOPE on HIV dataset
-The [first notebook called *Multiple Spacing Tests*](https://github.com/ydecastro/lar_testing/blob/master/multiple_spacing_tests.ipynb) presents the numerical experiments of the paper entitled
+The [@icn-laptop-code first notebook called *Multiple Spacing Tests*](https://github.com/ydecastro/lar_testing/blob/master/multiple_spacing_tests.ipynb) presents the numerical experiments of the paper entitled
 
 > *Multiple Testing and Variable Selection along Least Angle Regression's path*, [arXiv:1906.12072v3](https://arxiv.org/abs/1906.12072v3).
 
@@ -37,7 +37,7 @@ The methods considered are:
 
 
 ### Numerical joint law
-The [second notebook](https://github.com/ydecastro/lar_testing/blob/master/Law_LAR.ipynb) gives an empirical evidence of the joint law shown in the paper
+The [@icn-laptop-code second notebook](https://github.com/ydecastro/lar_testing/blob/master/Law_LAR.ipynb) gives an empirical evidence of the joint law shown in the paper
 > *Multiple Testing and Variable Selection along Least Angle Regression's path*, [arXiv:1906.12072v3](https://arxiv.org/abs/1906.12072v3).
 
 *Thank you for your time!*
