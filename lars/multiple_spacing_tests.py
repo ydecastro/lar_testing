@@ -9,8 +9,37 @@ This py file contains functions for running multiple spacing testing on the LAR'
 import numpy as np
 import matplotlib.pyplot as plt
 import time
+import scipy as sc
+import random
 from scipy.special import erfc
 from scipy.stats import norm, binom
+
+# %% Generate generate data
+
+def generate_data(n, p, k, eta, A, X=None, theta0=None, S=None):
+    '''
+    We consider the linear model: y = X @ theta0 + W where
+      - X is a (n x p) matrix drawn from N(0, Sigma) with Sigma_ij = eta^{|i-j|} with eta \in (0,1). Columns are normalized
+      - theta0 has k non-zero coefficients. The non-zero coeffs are set uniformly at random to -A or +A
+      - W is a standard gaussian vector
+    '''
+    if X is None:
+        sig = np.ones(p)
+        for i in range(1,p):
+            sig[i] = eta * sig[i-1]
+        Sigma = sc.linalg.circulant(sig)
+        Sigma = np.tril(Sigma) + np.tril(Sigma, -1).T
+
+        X = np.random.multivariate_normal(np.zeros(p), Sigma, size=n)
+        for j in range(p):
+            X[:,j] /= np.linalg.norm(X[:,j])
+    if theta0 is None:
+        S = random.sample(range(p), k)
+        theta0 = np.zeros(p)
+        theta0[S] = 2*(np.random.normal(0,1,k)>0)-1
+        theta0 *= A
+    y = X @ theta0 + np.random.normal(0,1,n)
+    return theta0, X, S, y
 
 
 # %% Generate variables
@@ -619,7 +648,7 @@ def stacked_bar(data, series_labels, category_labels=None,
                        the legend)
     category_labels -- list of category labels (these appear
                        on the x-axis)
-    show_values     -- If True then numeric value labels will 
+    show_values     -- If True then numeric value labels will
                        be shown on each bar
     value_format    -- Format string for numeric value labels
                        (default is "{}")
