@@ -28,7 +28,7 @@ We present the following points:
 The methods considered are:
 - **[Knockoff]** Knockoff filters for FDR control and we use the implementation presented on the webpage <https://web.stanford.edu/group/candes/knockoffs/> based on the paper:
 > *Controlling the False Discovery Rate via Knockoffs*, [arXiv:1404.5609](https://arxiv.org/abs/1404.5609);
-- **[FCD]** False Discovery Control via Debiasing and we use the implementation of debiased lasso presented on the webpage <https://web.stanford.edu/~montanar/sslasso/> with the theoretical value $\bar\lambda=2\sqrt{(2\log p)/n}$ for the regularizing parameter as presented in the paper:
+- **[FCD]** False Discovery Control via Debiasing and we use the implementation of debiased lasso presented on the webpage <https://web.stanford.edu/~montanar/sslasso/> and as presented in the paper:
 > *False Discovery Rate Control via Debiased Lasso*, [arXiv:1803.04464](https://arxiv.org/abs/1803.04464);
 - **[Slope]** Slope for FDR control, as presented in the paper:
 > *SLOPE - Adaptive variable selection via convex optimization* [arXiv:1407.3824](https://arxiv.org/abs/1407.3824);
