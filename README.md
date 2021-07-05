@@ -37,7 +37,7 @@ The methods considered are:
 
 
 ### Numerical joint law
-The [second notebook](https://github.com/ydecastro/lar_testing/blob/master/Law_LAR.ipynb)) gives an empirical evidence of the joint law shown in the paper
+The [second notebook](https://github.com/ydecastro/lar_testing/blob/master/Law_LAR.ipynb) gives an empirical evidence of the joint law shown in the paper
 > *Multiple Testing and Variable Selection along Least Angle Regression's path*, [arXiv:1906.12072v3](https://arxiv.org/abs/1906.12072v3).
 
 *Thank you for your time!*
