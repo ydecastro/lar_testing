@@ -7,6 +7,10 @@ by Jean-Marc Azaïs and [Yohann De Castro](https:ydecastro.github.io). The Pytho
 
 [Github repository lar_testing](https://github.com/ydecastro/lar_testing)
 
+and the code used in the paper arXiv:1906.12072v3 has been posted on Zenodo:
+
+[![DOI](https://zenodo.org/badge/182083824.svg)](https://zenodo.org/badge/latestdoi/182083824)
+
 ## Comparison with Knockoff, FCD and SLOPE on HIV dataset
 
 The [**first notebook** called *Multiple Spacing Tests*](https://github.com/ydecastro/lar_testing/blob/master/multiple_spacing_tests.ipynb) presents the numerical experiments of the paper entitled
