@@ -7,7 +7,7 @@ by Jean-Marc Azaïs and [Yohann De Castro](https:ydecastro.github.io). The Pytho
 
 [Github repository lar_testing](https://github.com/ydecastro/lar_testing)
 
-and the code used in the paper arXiv:1906.12072v3 has been posted on Zenodo:
+and the code used `lar_testing-v1.1` in the paper *arXiv:1906.12072v3* has been posted on Zenodo:
 
 [![DOI](https://zenodo.org/badge/182083824.svg)](https://zenodo.org/badge/latestdoi/182083824)
 
