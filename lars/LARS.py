@@ -67,33 +67,20 @@ class LARS(FDRControl, FalseNegativeTest, LarsPath, pValues):
 	def power(self, selected_support, true_support):
 		return (1-len(set(true_support)-set(selected_support))/max(len(true_support),1))
 
-	def fdr_power(self, true_support, X=None, y=None, alpha=0.2, method='lars', **kwargs):
+	def fdr_power(self, true_support, X=None, y=None, alpha=0.1, method='lars', **kwargs):
 		if method=='lars':
 			sigma = kwargs.get('sigma', None)
 			K1 = kwargs.get('K1', None)
 			K2 = kwargs.get('K2', None)			
 			return self.fdr_power_lars(true_support, alpha, sigma=sigma, K1=K1, K2=K2)
 		elif method=='KSDP':
-			knockoff_plus = kwargs.get('knockoff_plus', False)
+			knockoff_plus = kwargs.get('knockoff_plus', True)
 			return self.fdr_power_knockoffs(X, y, true_support, q=alpha, mode='SDP', knockoff_plus=knockoff_plus, **kwargs)
 		elif method=='KEQUI':
-			knockoff_plus = kwargs.get('knockoff_plus', False)
+			knockoff_plus = kwargs.get('knockoff_plus', True)
 			return self.fdr_power_knockoffs(X, y, true_support, q=alpha, mode='equicorrelated', knockoff_plus=knockoff_plus, **kwargs)
 
-	def fdr_power(self, true_support, X=None, y=None, alpha=0.2, method='lars', **kwargs):
-		if method=='lars':
-			sigma = kwargs.get('sigma', None)
-			K1 = kwargs.get('K1', None)
-			K2 = kwargs.get('K2', None)			
-			return self.fdr_power_lars(true_support, alpha, sigma=sigma, K1=K1, K2=K2)
-		elif method=='KSDP':
-			knockoff_plus = kwargs.get('knockoff_plus', False)
-			return self.fdr_power_knockoffs(X, y, true_support, q=alpha, mode='SDP', knockoff_plus=knockoff_plus, **kwargs)
-		elif method=='KEQUI':
-			knockoff_plus = kwargs.get('knockoff_plus', False)
-			return self.fdr_power_knockoffs(X, y, true_support, q=alpha, mode='equicorrelated', knockoff_plus=knockoff_plus, **kwargs)
-
-	def in_out_support(self, true_vars, support2vars, X=None, y=None, alpha=0.2, method='lars', **kwargs):
+	def in_out_support(self, true_vars, support2vars, X=None, y=None, alpha=0.1, method='lars', **kwargs):
 		if method=='lars':
 			sigma = kwargs.get('sigma', None)
 			K1 = kwargs.get('K1', None)
@@ -105,7 +92,7 @@ class LARS(FDRControl, FalseNegativeTest, LarsPath, pValues):
 			return IN, OUT
 		
 		elif method=='KSDP':
-			knockoff_plus = kwargs.get('knockoff_plus', False)
+			knockoff_plus = kwargs.get('knockoff_plus', True)
 			support = self.support_fdr_knockoffs(X, y, alpha=alpha, mode='SDP', knockoff_plus=knockoff_plus, **kwargs)
 			variables = support2vars[support]
 			OUT = len(set(variables)-set(true_vars))
@@ -113,7 +100,7 @@ class LARS(FDRControl, FalseNegativeTest, LarsPath, pValues):
 			return IN, OUT
 
 		elif method=='KEQUI':
-			knockoff_plus = kwargs.get('knockoff_plus', False)
+			knockoff_plus = kwargs.get('knockoff_plus', True)
 			support = self.support_fdr_knockoffs(X, y, alpha=alpha, mode='equicorrelated', knockoff_plus=knockoff_plus, **kwargs)
 			variables = support2vars[support]
 			OUT = len(set(variables)-set(true_vars))

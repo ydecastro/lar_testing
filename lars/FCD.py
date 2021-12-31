@@ -145,21 +145,24 @@ def FCD(n, p, X, y, level=0.1, sigma=None):
     from sklearn import linear_model
 
     lamb = 2 * np.sqrt(2 * np.log(p)/n) #np.sqrt(sc.stats.norm.ppf(1-(0.1/p))/n)
-    clf = linear_model.Lasso(alpha=lamb, fit_intercept=False)
-    clf.fit(X, y)
-    theta_lasso = clf.coef_
-
     Sigma_hat = X.T @ X / n
     q = level
-    M = inverseLinfty(Sigma_hat, n)
-    theta_debias = theta_lasso + M @ X.T @ (y- X @ theta_lasso) / n
-
-
-    # Compute the test statistic
-    Lambda = M @ Sigma_hat @ M.T
+    
+    if n<p:
+        clf = linear_model.Lasso(alpha=lamb, fit_intercept=False)
+        clf.fit(X, y)
+        theta_estimate = clf.coef_
+        M = inverseLinfty(Sigma_hat, n)
+        theta_debias = theta_estimate + M @ X.T @ (y- X @ theta_estimate) / n
+        Lambda = M @ Sigma_hat @ M.T
+    else:
+        Lambda = np.linalg.inv(Sigma_hat)
+        theta_debias = Lambda @ X.T @ y / n
+        if sigma is None:
+            sigma = y.T @ ( np.identity(n) - X @ Lambda @ X.T / n ) @ y / ( n - p )
 
     if sigma is None:
-        # Estimate the noise using suare-root lasso
+        # Estimate the noise using square-root lasso
         sigma = sigma_square_root_lasso(X, y, lamb)
     else:
         sigma = 1
@@ -171,11 +174,13 @@ def FCD(n, p, X, y, level=0.1, sigma=None):
     tp = np.sqrt( 2*np.log(p) - 2*np.log(np.log(p)))
     orderedstatFCD = np.sort(np.abs(statFCD))[::-1]
     Rt = 0
+    
     if orderedstatFCD[0]<tp:
         Rt = 0
     else:
         while orderedstatFCD[Rt]>=tp and Rt<p:
             Rt += 1
+            
     if 2*p*(1-sc.stats.norm.cdf(tp))>q*max(1,Rt):
         t0 = np.sqrt(2*np.log(p))
     else:

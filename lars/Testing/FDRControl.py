@@ -30,7 +30,7 @@ class FDRControl:
 		plt.title('Ordered p-Values for Multiple Spacings')
 		plt.show()
 
-	def support_fdr_lars(self, X, y, alpha=0.2, kmax=0, normalization=True, lars_algorithm='recursive', number_hyp=None, sigma=None, K1=None, K2=None):
+	def support_fdr_lars(self, X, y, alpha=0.1, kmax=0, normalization=True, lars_algorithm='recursive', number_hyp=None, sigma=None, K1=None, K2=None):
 		#self.compute_lars_path(X, y, kmax=kmax, normalization=normalization, lars_algorithm=lars_algorithm)
 		return self.fdr_control(alpha, number_hyp=number_hyp, sigma=sigma, K1=K1, K2=K2)
 

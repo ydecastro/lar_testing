@@ -11,13 +11,13 @@ class Knockoffs():
 	def __init__(self):
 		pass
 
-	def fdr_power_knockoffs(self, X, y, true_support, alpha=0.2, mode='equicorrelated', knockoff_plus=False, **kwargs):
-		support_knockoff = self.support_fdr_knockoffs(X, y, alpha=alpha, mode='equicorrelated', knockoff_plus=False, **kwargs)
+	def fdr_power_knockoffs(self, X, y, true_support, alpha=0.1, mode='equicorrelated', knockoff_plus=True, **kwargs):
+		support_knockoff = self.support_fdr_knockoffs(X, y, alpha=alpha, mode=mode, knockoff_plus=knockoff_plus, **kwargs)
 		FDR = self.FDR(support_knockoff, true_support)
 		power = self.power(support_knockoff, true_support)
 		return FDR, power
 
-	def support_fdr_knockoffs(self, X, y, alpha=0.2, mode='equicorrelated', knockoff_plus=False, **kwargs):
+	def support_fdr_knockoffs(self, X, y, alpha=0.1, mode='equicorrelated', knockoff_plus=True, **kwargs):
 		self.n, self.p = X.shape
 		Xcorr = X / np.tile(np.linalg.norm(X, axis=0).reshape(1,-1),(self.n,1))
 		Xcorr[np.where(np.isnan(Xcorr))] = 0
