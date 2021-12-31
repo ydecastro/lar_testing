@@ -1,7 +1,7 @@
 # lar_testing
 
 This repository contains an illustration of the numerical experiments performed in the paper entitled
-> *Multiple Testing and Variable Selection Along the Path of the Least Angle Regression*, [arXiv:1906.12072v3](https://arxiv.org/abs/1906.12072v4).
+> *Multiple Testing and Variable Selection Along the Path of the Least Angle Regression*, [arXiv:1906.12072v4](https://arxiv.org/abs/1906.12072v4).
 
 by Jean-Marc Azaïs and [Yohann De Castro](https:ydecastro.github.io). The Python code can be downloaded at
 
@@ -15,7 +15,7 @@ and the code `lar_testing-v1.1` used in the paper *arXiv:1906.12072v3* has been 
 
 The [**first notebook** called *Multiple Spacing Tests*](https://github.com/ydecastro/lar_testing/blob/master/multiple_spacing_tests.ipynb) presents the numerical experiments of the paper entitled
 
-> *Multiple Testing and Variable Selection along Least Angle Regression's path*, [arXiv:1906.12072v3](https://arxiv.org/abs/1906.12072v3).
+> *Multiple Testing and Variable Selection Along a Path of the Least Angle Regression*, [arXiv:1906.12072v4](https://arxiv.org/abs/1906.12072v4).
 
 We present the following points:
 - A comparison of the **power and FDR control** on simulated data for **GtST, FCD and Knockoff** in **Section I**;
