@@ -1,13 +1,13 @@
 # lar_testing
 
 This repository contains an illustration of the numerical experiments performed in the paper entitled
-> *Multiple Testing and Variable Selection Along the Path of the Least Angle Regression*, [arXiv:1906.12072v4](https://arxiv.org/abs/1906.12072v4).
+> *Multiple Testing and Variable Selection Along the Path of the Least Angle Regression*, [arXiv:1906.12072v5](https://arxiv.org/abs/1906.12072v5).
 
 by Jean-Marc Azaïs and [Yohann De Castro](https:ydecastro.github.io). The Python code can be downloaded at
 
 [Github repository lar_testing](https://github.com/ydecastro/lar_testing)
 
-and the code `lar_testing-v2.0` used in the paper *arXiv:1906.12072v4* has been posted on Zenodo:
+and the code `lar_testing-v2.0` used in the paper *arXiv:1906.12072v5* has been posted on Zenodo:
 
 [![DOI](https://zenodo.org/badge/182083824.svg)](https://zenodo.org/badge/latestdoi/182083824)
 
@@ -15,7 +15,7 @@ and the code `lar_testing-v2.0` used in the paper *arXiv:1906.12072v4* has been 
 
 The [**first notebook** called *Multiple Spacing Tests*](https://github.com/ydecastro/lar_testing/blob/master/multiple_spacing_tests.ipynb) presents the numerical experiments of the paper entitled
 
-> *Multiple Testing and Variable Selection Along a Path of the Least Angle Regression*, [arXiv:1906.12072v4](https://arxiv.org/abs/1906.12072v4).
+> *Multiple Testing and Variable Selection Along a Path of the Least Angle Regression*, [arXiv:1906.12072v5](https://arxiv.org/abs/1906.12072v5).
 
 We present the following points:
 - A comparison of the **power and FDR control** on simulated data for **GtST, FCD and Knockoff** in **Section I**;
@@ -31,11 +31,11 @@ The methods considered are:
 - **[Slope]** Slope for FDR control, as presented in the paper:
 > *SLOPE - Adaptive variable selection via convex optimization* [arXiv:1407.3824](https://arxiv.org/abs/1407.3824);
 - **[GtSt-BH]** Generalized t-Spacing tests on successive entries of the LARS path comibined with a Benjamini–Hochberg procedure presented in the paper:
-> *Multiple Testing and Variable Selection along Least Angle Regression's path*, [arXiv:1906.12072v3](https://arxiv.org/abs/1906.12072v3).
+> *Multiple Testing and Variable Selection along Least Angle Regression's path*, [arXiv:1906.12072v5](https://arxiv.org/abs/1906.12072v5).
 
 
 ## Numerical joint law
 The [**second notebook**](https://github.com/ydecastro/lar_testing/blob/master/Law_LAR.ipynb) gives an empirical evidence of the joint law shown in the paper
-> *Multiple Testing and Variable Selection along Least Angle Regression's path*, [arXiv:1906.12072v3](https://arxiv.org/abs/1906.12072v3).
+> *Multiple Testing and Variable Selection along Least Angle Regression's path*, [arXiv:1906.12072v5](https://arxiv.org/abs/1906.12072v5).
 
 *Thank you for your time!*
