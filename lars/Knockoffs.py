@@ -3,6 +3,7 @@ from cvxopt import solvers
 from cvxopt.solvers import conelp
 from sklearn import linear_model
 from cvxopt import matrix
+import cvxpy as cp
 import scipy.cluster.hierarchy
 from statsmodels.stats.moment_helpers import cov2corr
 
@@ -95,23 +96,13 @@ class Knockoffs():
 
 	def s_SDP(self, Sigma):
 		p = Sigma.shape[0]
-		c = -np.ones(p)
-		c = matrix(c)
-		G = np.zeros((2*p+p**2,p))
-		G[:p,:] = np.eye(p)
-		G[p:2*p,:] = -np.eye(p)
-		for i in range(p):
-			G[2*p+p*i,i] = 1
-		G = matrix(G)
-		h = np.ones(2*p+p**2)
-		h[p:2*p] *= 0
-		h[2*p:] *= 2*(Sigma).reshape(-1)
-		h = matrix(h)
-		dims = {'l': 2*p, 'q': [], 's': [p]}
-		solvers.options['show_progress'] = False
-		sol = conelp(c, G, h, dims)
-		s = np.array(sol['x']).reshape(-1)
-		return s
+		s = cp.Variable(p)
+		objective = cp.Maximize(cp.sum(s))
+		constraints = [0 <= s, s <= 1]
+		constraints += [2*Sigma-cp.diag(s) >> 0]
+		prob = cp.Problem(objective, constraints)
+		prob.solve(eps=1e-10)
+		return s.value
 
 	def s_ASDP(self, Sigma, **kwargs):
 		""" Section 3.4.2 : Panning for Gold:Model-X Knockoffs for High-dimensional Controlled Variable Selection """
